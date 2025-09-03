@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Stock Suggestion System - 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Indian Stock Suggestion System - 2025</h1>
+            <p class="header-subtitle">AI-Powered Investment Recommendations Based on Fundamental Analysis</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Overview Dashboard -->
+            <section class="dashboard">
+                <h2>Market Overview</h2>
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <div class="overview-number">21</div>
+                        <div class="overview-label">Total Stocks Analyzed</div>
+                    </div>
+                    <div class="overview-card status-success">
+                        <div class="overview-number">5</div>
+                        <div class="overview-label">Strong Buy</div>
+                    </div>
+                    <div class="overview-card status-info">
+                        <div class="overview-number">9</div>
+                        <div class="overview-label">Moderate Buy</div>
+                    </div>
+                    <div class="overview-card status-warning">
+                        <div class="overview-number">7</div>
+                        <div class="overview-label">Hold</div>
+                    </div>
+                    <div class="overview-card status-error">
+                        <div class="overview-number">0</div>
+                        <div class="overview-label">Sell</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Top Recommendations -->
+            <section class="top-recommendations">
+                <h2>Top 5 Strong Buy Recommendations</h2>
+                <div class="recommendations-grid" id="topRecommendations">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Filters and Controls -->
+            <section class="controls">
+                <div class="controls-row">
+                    <div class="filter-group">
+                        <label for="sectorFilter" class="form-label">Filter by Sector:</label>
+                        <select id="sectorFilter" class="form-control">
+                            <option value="">All Sectors</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="signalFilter" class="form-label">Filter by Signal:</label>
+                        <select id="signalFilter" class="form-control">
+                            <option value="">All Signals</option>
+                            <option value="Strong Buy">Strong Buy</option>
+                            <option value="Moderate Buy">Moderate Buy</option>
+                            <option value="Hold">Hold</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="qualityFilter" class="form-label">Investment Quality:</label>
+                        <select id="qualityFilter" class="form-control">
+                            <option value="">All Qualities</option>
+                            <option value="Excellent">Excellent</option>
+                            <option value="Good">Good</option>
+                            <option value="Average">Average</option>
+                        </select>
+                    </div>
+                    <div class="export-group">
+                        <button id="exportBtn" class="btn btn--primary">
+                            Export to CSV
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stock Analysis Table -->
+            <section class="stock-table-section">
+                <h2>Stock Analysis Table</h2>
+                <div class="table-container">
+                    <table class="stock-table" id="stockTable">
+                        <thead>
+                            <tr>
+                                <th class="sortable" data-sort="stock">Stock Name</th>
+                                <th class="sortable" data-sort="sector">Sector</th>
+                                <th class="sortable" data-sort="price">Current Price (₹)</th>
+                                <th class="sortable" data-sort="target">Target Price (₹)</th>
+                                <th class="sortable" data-sort="score">Fund. Score</th>
+                                <th class="sortable" data-sort="quality">Quality</th>
+                                <th class="sortable" data-sort="valuation">Valuation</th>
+                                <th class="sortable" data-sort="risk">Risk</th>
+                                <th class="sortable" data-sort="signal">Signal</th>
+                                <th class="sortable" data-sort="return">Expected Return</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="stockTableBody">
+                            <!-- Will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Detailed Analysis Section -->
+            <section class="detailed-analysis">
+                <div class="analysis-tabs">
+                    <button class="tab-button active" data-tab="methodology">Analysis Methodology</button>
+                    <button class="tab-button" data-tab="timing">Buy/Sell Timing</button>
+                    <button class="tab-button" data-tab="risk">Risk Management</button>
+                </div>
+
+                <div class="tab-content">
+                    <div id="methodology" class="tab-pane active">
+                        <h3>Fundamental Analysis Methodology</h3>
+                        <div class="methodology-grid">
+                            <div class="methodology-item">
+                                <h4>Key Metrics Used</h4>
+                                <ul>
+                                    <li><strong>ROE (Return on Equity):</strong> Measures profitability relative to shareholder equity</li>
+                                    <li><strong>ROCE (Return on Capital Employed):</strong> Indicates efficiency of capital utilization</li>
+                                    <li><strong>PE Ratio:</strong> Price-to-earnings valuation metric</li>
+                                    <li><strong>Debt-to-Equity:</strong> Financial leverage and risk assessment</li>
+                                    <li><strong>Economic Moat:</strong> Competitive advantage sustainability</li>
+                                </ul>
+                            </div>
+                            <div class="methodology-item">
+                                <h4>Scoring System</h4>
+                                <ul>
+                                    <li><strong>90-100:</strong> Excellent fundamentals, strong buy candidates</li>
+                                    <li><strong>80-89:</strong> Good fundamentals, moderate buy</li>
+                                    <li><strong>70-79:</strong> Average fundamentals, selective buying</li>
+                                    <li><strong>Below 70:</strong> Weak fundamentals, avoid or hold</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="timing" class="tab-pane">
+                        <h3>Buy/Sell Timing Indicators</h3>
+                        <div class="timing-grid">
+                            <div class="timing-item">
+                                <h4>Entry Criteria</h4>
+                                <ul>
+                                    <li>Stock trading below fair value with strong fundamentals</li>
+                                    <li>Positive price momentum and bullish trend</li>
+                                    <li>Support level holding with increasing volume</li>
+                                    <li>Sector tailwinds and favorable market conditions</li>
+                                </ul>
+                            </div>
+                            <div class="timing-item">
+                                <h4>Exit Strategy</h4>
+                                <ul>
+                                    <li>Target price achievement (35-45% returns for strong buys)</li>
+                                    <li>Fundamental deterioration in key metrics</li>
+                                    <li>Stop loss at 15% below entry price</li>
+                                    <li>Time-based exit after 2-3 years if targets not met</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="risk" class="tab-pane">
+                        <h3>Risk Management Guidelines</h3>
+                        <div class="risk-grid">
+                            <div class="risk-item">
+                                <h4>Portfolio Allocation</h4>
+                                <ul>
+                                    <li>Strong Buy stocks: Maximum 20% per stock</li>
+                                    <li>Moderate Buy stocks: Maximum 10% per stock</li>
+                                    <li>Diversification across 8-12 sectors</li>
+                                    <li>Maximum 60% equity allocation for conservative investors</li>
+                                </ul>
+                            </div>
+                            <div class="risk-item">
+                                <h4>Risk Categories</h4>
+                                <ul>
+                                    <li><strong>Low Risk:</strong> Large-cap, established companies with consistent performance</li>
+                                    <li><strong>Medium Risk:</strong> Mid-cap companies with growth potential</li>
+                                    <li><strong>High Risk:</strong> Small-cap or volatile sectors requiring careful monitoring</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sector Distribution Chart -->
+            <section class="charts-section">
+                <h2>Sector Distribution</h2>
+                <div class="chart-container" style="position: relative; height: 400px;">
+                    <canvas id="sectorChart"></canvas>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Stock Detail Modal -->
+    <div id="stockModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalStockName">Stock Details</h3>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
